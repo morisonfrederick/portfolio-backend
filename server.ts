@@ -9,6 +9,7 @@ app.get("/*splat", async (req: Request, res: Response) => {
   try {
     console.log("get request recieved");
     const url = req.originalUrl.slice(1);
+    console.log(url);
     const response = await axios.get(url);
     res.status(200).send(response.data);
   } catch (error) {
